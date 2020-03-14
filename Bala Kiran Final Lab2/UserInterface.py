@@ -17,10 +17,11 @@ class User_Interface:
 
     def read_a_team(self, team_info):
         if team_info in self.menu_team:
-            print(F"\nName of the team is {self.menu_team[team_info].name}")
-            print(F"Mentioned city of the team is {self.menu_team[team_info].city}")
-            print(F"Is the Fee Paid{self.menu_team[team_info].fee}")
-            print(F"The number of the players in the team are {self.menu_team[team_info].number}")
+            print(F"\nName of the team is: {self.menu_team[team_info].name}")
+            print(F"Mentioned city of the team is: {self.menu_team[team_info].city}")
+            print(F"Is the Fee Paid: {self.menu_team[team_info].fee}")
+            print(F"The number of the players in the team are: {self.menu_team[team_info].number}")
+            print(F"The amount paid by the team is: {self.menu_team[team_info].fee_amount}")
         else:
             print(F"{team_info} is not there in the list")
 
@@ -42,6 +43,18 @@ class User_Interface:
         else:
             print(F"{team_info} has not found in the list")
 
+    def teams_enrolled(self):
+        print(F"The number of the teams which have been enrolled till now are: {len(self.menu_team)}")
+
+    def sum_of_amount_paid(self):
+        print(F"The sum amount paid by all teams: {sum(int(self.menu_team[i].fee_amount) for i in self.menu_team)}")
+
+    def teams_with_fee_not_paid(self):
+        not_paid = len([self.menu_team[i]
+                       for i in self.menu_team
+                       if self.menu_team[i].fee == "not paid"])
+        print(F"\n{round(not_paid/len(self.menu_team)*100, 2)}% have not paid the fees")
+
     def exit(self):
         print("Thank you")
 
@@ -53,6 +66,9 @@ class User_Interface:
         read_an_team = 2
         update_an_team = 3
         delete_an_team = 4
+        teams_enrolled = 5
+        total_sum_of_fees_paid = 6
+        percentage_of_teams_unpaid = 8
         exit = 0
 
         while choice != exit:
@@ -61,6 +77,9 @@ class User_Interface:
             print("2. Read a Team")
             print("3. Update a Team")
             print("4. Delete a Team")
+            print("5. Number of the teams Enrolled")
+            print("6. Total sum of the fees Paid")
+            print("7. Percentage of the teams who have not paid fees")
             print("0. Exit")
 
             try:
@@ -95,6 +114,15 @@ class User_Interface:
                     print(F"{team_info} has been deleted")
                 else:
                     print(F"{team_info} is not in the list")
+
+            elif choice == teams_enrolled:
+                self.teams_enrolled()
+
+            elif choice == total_sum_of_fees_paid:
+                self.sum_of_amount_paid()
+
+            elif choice == percentage_of_teams_unpaid:
+                self.teams_with_fee_not_paid()
 
             else:
                 print("Thanks")
