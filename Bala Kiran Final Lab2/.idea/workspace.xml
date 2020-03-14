@@ -27,7 +27,78 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunManager" selected="Python.UserInterface">
+    <configuration name="Class team" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="FinalLab2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Class team.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="UserInterface" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="FinalLab2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/UserInterface.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="maths" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/PycharmProjects/Python" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/PycharmProjects/Python/maths.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.UserInterface" />
+        <item itemvalue="Python.Class team" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -65,16 +136,32 @@
       <screen x="0" y="23" width="1280" height="732" />
     </state>
     <state x="0" y="54" key="#Notifications/0.23.1280.732@0.23.1280.732" timestamp="1583172037216" />
-    <state x="104" y="31" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583171954766">
-      <screen x="0" y="0" width="1280" height="800" />
+    <state x="104" y="51" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583602629790">
+      <screen x="0" y="23" width="1280" height="732" />
     </state>
     <state x="104" y="31" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.800@0.0.1280.800" timestamp="1583171954766" />
-    <state x="104" y="51" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.732@0.23.1280.732" timestamp="1583171947861" />
-    <state x="190" y="28" key="SettingsEditor" timestamp="1583172379594">
+    <state x="104" y="51" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.732@0.23.1280.732" timestamp="1583602629790" />
+    <state width="1259" height="182" key="GridCell.Tab.0.bottom" timestamp="1583744882394">
+      <screen x="0" y="23" width="1280" height="732" />
+    </state>
+    <state width="1259" height="182" key="GridCell.Tab.0.bottom/0.23.1280.732@0.23.1280.732" timestamp="1583744882394" />
+    <state width="1259" height="182" key="GridCell.Tab.0.center" timestamp="1583744882394">
+      <screen x="0" y="23" width="1280" height="732" />
+    </state>
+    <state width="1259" height="182" key="GridCell.Tab.0.center/0.23.1280.732@0.23.1280.732" timestamp="1583744882394" />
+    <state width="1259" height="182" key="GridCell.Tab.0.left" timestamp="1583744882393">
+      <screen x="0" y="23" width="1280" height="732" />
+    </state>
+    <state width="1259" height="182" key="GridCell.Tab.0.left/0.23.1280.732@0.23.1280.732" timestamp="1583744882393" />
+    <state width="1259" height="182" key="GridCell.Tab.0.right" timestamp="1583744882394">
+      <screen x="0" y="23" width="1280" height="732" />
+    </state>
+    <state width="1259" height="182" key="GridCell.Tab.0.right/0.23.1280.732@0.23.1280.732" timestamp="1583744882394" />
+    <state x="226" y="32" key="SettingsEditor" timestamp="1583607183248">
       <screen x="0" y="23" width="1280" height="732" />
     </state>
     <state x="190" y="5" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1583171973595" />
-    <state x="190" y="28" key="SettingsEditor/0.23.1280.732@0.23.1280.732" timestamp="1583172379594" />
+    <state x="226" y="32" key="SettingsEditor/0.23.1280.732@0.23.1280.732" timestamp="1583607183248" />
     <state x="208" y="313" key="VCS.EditChangelistDialog" timestamp="1583172260675">
       <screen x="0" y="23" width="1280" height="732" />
     </state>

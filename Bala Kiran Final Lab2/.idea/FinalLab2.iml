@@ -7,5 +7,6 @@
     <orderEntry type="jdk" jdkName="Python 3.8 (Python)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="h19baman_progr_assignm" />
+    <orderEntry type="module" module-name="Python" />
   </component>
 </module>
