@@ -1,3 +1,4 @@
+from datetime import datetime, date
 class Team:
     def __init__(self, name, city, fee, number):
         self.name = name
@@ -5,6 +6,8 @@ class Team:
         self.fee = fee
         self.number = number
         self.fee_amount = 10000
+        self.created = datetime.now()
+        self.registered = date.today()
 
     def set_name(self, name):
         self.name = name

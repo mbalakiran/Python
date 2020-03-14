@@ -1,4 +1,5 @@
 from ClassTeam import Team
+from datetime import datetime, date
 
 class User_Interface:
     def __init__(self):
@@ -7,7 +8,7 @@ class User_Interface:
 
     def create_new_team(self, team_info):
         city = input("Please insert the city name of the team: ").lower()
-        fee = input("Please enter the Fee(Paid/Not Paid: ").lower()
+        fee = input("Please enter the Fee(Paid/Not Paid): ").lower()
         if fee not in ['paid', 'not paid']:
             print(F"{fee} is not a correct option. Please enter the correct value")
             return False
@@ -22,6 +23,10 @@ class User_Interface:
             print(F"Is the Fee Paid: {self.menu_team[team_info].fee}")
             print(F"The number of the players in the team are: {self.menu_team[team_info].number}")
             print(F"The amount paid by the team is: {self.menu_team[team_info].fee_amount}")
+            registeredtime = datetime.now().strftime('%Y-%m-%d %H-%M-%S')
+            print(F"The team has been registered on: ",registeredtime)
+            print(F"{self.menu_team[team_info].name} team is "
+                  F"{(date.today() - self.menu_team[team_info].registered).days} days old \n")
         else:
             print(F"{team_info} is not there in the list")
 
