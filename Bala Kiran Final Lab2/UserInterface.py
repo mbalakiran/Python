@@ -1,5 +1,6 @@
 from ClassTeam import Team
 from datetime import datetime, date
+import pickle
 
 class User_Interface:
     def __init__(self):
@@ -35,9 +36,16 @@ class User_Interface:
             if city != "":
                 self.menu_team[team_info].city = city
             if fee != " ":
-                self.menu_team[team_info].fee = fee
+                if fee not in ['paid', 'not paid']:
+                    print(F"{fee} is not an valid option. Please select correct option to update the Item")
+                else:
+                    self.menu_team[team_info].fee = fee
             if number != " ":
-                self.menu_team[team_info].number = number
+                try:
+                    int(number)
+                    self.menu_team[team_info].number = number
+                except ValueError as err:
+                    print(err, "is not a vaild number to update")
             else:
                 print(F"{team_info} has not found in the list")
 
@@ -60,12 +68,30 @@ class User_Interface:
                        if self.menu_team[i].fee == "not paid"])
         print(F"\n{round(not_paid/len(self.menu_team)*100, 2)}% have not paid the fees")
 
+    def read_teams_from_the_file(self, createdfile):
+        try:
+            file = open(createdfile, "rb")
+            self.menu_team = pickle.load(file)
+            file.close()
+            print("The File has been opened Successfully")
+        except IOError as err:
+            print("\n There is no file exits with the name: ", err)
+
+    def write_to_the_file(self, createdfile):
+        try:
+            file = open(createdfile, "wb")
+            pickle.dump(self.menu_team, file)
+            file.close()
+            print("Writing to the File was Successful")
+        except IOError as err:
+            print("\n We are not able to find the filename with ", err)
+
     def exit(self):
         print("Thank you")
 
     def user_interface_menu(self):
 
-        n = 1
+
         choice = 99
         create_an_team = 1
         read_an_team = 2
@@ -73,7 +99,9 @@ class User_Interface:
         delete_an_team = 4
         teams_enrolled = 5
         total_sum_of_fees_paid = 6
-        percentage_of_teams_unpaid = 8
+        percentage_of_teams_unpaid = 7
+        read_the_teams_from_file = 8
+        write_the_temas_to_file = 9
         exit = 0
 
         while choice != exit:
@@ -85,6 +113,8 @@ class User_Interface:
             print("5. Number of the teams Enrolled")
             print("6. Total sum of the fees Paid")
             print("7. Percentage of the teams who have not paid fees")
+            print("8. Read the Team names from the file")
+            print("9. Write the Team names to the file")
             print("0. Exit")
 
             try:
@@ -94,6 +124,10 @@ class User_Interface:
 
             if choice == create_an_team:
                 name = input("Please enter you team name: ").lower()
+                if self.create_new_team(name):
+                    print(F"{name} is already in the Team list. The {name} will be added as {name}{n}")
+                    name = name + F"{n}"
+                    n += 1
                 if self.create_new_team(name):
                     print(F"{name} has been created")
 
@@ -128,6 +162,14 @@ class User_Interface:
 
             elif choice == percentage_of_teams_unpaid:
                 self.teams_with_fee_not_paid()
+
+            elif choice == read_the_teams_from_file:
+                createdfile = input("Please Enter the file name with items to read(Skip Extension): ")
+                self.read_teams_from_the_file(createdfile + ".pkl")
+
+            elif choice == write_the_temas_to_file:
+                createdfile = input("Please Enter file name to save(Skip Extension): ")
+                self.write_to_the_file(createdfile + ".pkl")
 
             else:
                 print("Thanks")
