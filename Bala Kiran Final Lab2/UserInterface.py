@@ -6,13 +6,13 @@ class User_Interface:
     def __init__(self):
         self.menu_team = {}
 
-
     def create_new_team(self, team_info):
         city = input("Please insert the city name of the team: ").lower()
-        fee = input("Please enter the Fee(Paid/Not Paid): ").lower()
-        if fee not in ['paid', 'not paid']:
-            print(F"{fee} is not a correct option. Please enter the correct value")
-            return False
+        fee = input("Please enter the Fee(Y/N): ").lower()
+        if fee == "n":
+            fee = False
+        else:
+            fee = True
         number = int(input("Please enter the number of players in Team: "))
         self.menu_team[team_info] = Team(team_info, city, fee, number)
         return True
@@ -21,7 +21,7 @@ class User_Interface:
         if team_info in self.menu_team:
             print(F"\nName of the team is: {self.menu_team[team_info].name}")
             print(F"Mentioned city of the team is: {self.menu_team[team_info].city}")
-            print(F"Is the Fee Paid: {self.menu_team[team_info].fee}")
+            print(F"Is the Fee Paid: {self.menu_team[team_info].fee}")# fee = True if fee == 'y' else False)
             print(F"The number of the players in the team are: {self.menu_team[team_info].number}")
             print(F"The amount paid by the team is: {self.menu_team[team_info].fee_amount}")
             registeredtime = datetime.now().strftime('%Y-%m-%d %H-%M-%S')
@@ -35,12 +35,9 @@ class User_Interface:
         if team_info in self.menu_team:
             if city != "":
                 self.menu_team[team_info].city = city
-            if fee != " ":
-                if fee not in ['paid', 'not paid']:
-                    print(F"{fee} is not an valid option. Please select correct option to update the Item")
-                else:
+            if fee != "":
                     self.menu_team[team_info].fee = fee
-            if number != " ":
+            if number != "" or number != None:
                 try:
                     int(number)
                     self.menu_team[team_info].number = number
@@ -60,7 +57,10 @@ class User_Interface:
         print(F"The number of the teams which have been enrolled till now are: {len(self.menu_team)}")
 
     def sum_of_amount_paid(self):
-        print(F"The sum amount paid by all teams: {sum(int(self.menu_team[i].fee_amount) for i in self.menu_team)}")
+        paid = [self.menu_team[i]
+                       for i in self.menu_team
+                       if self.menu_team[i].fee == "True"]
+        print(F"The sum amount paid by all teams: {sum(self.menu_team[paid].fee_amount)}")
 
     def teams_with_fee_not_paid(self):
         not_paid = len([self.menu_team[i]
@@ -91,7 +91,7 @@ class User_Interface:
 
     def user_interface_menu(self):
 
-
+        n = 1
         choice = 99
         create_an_team = 1
         read_an_team = 2
@@ -124,7 +124,7 @@ class User_Interface:
 
             if choice == create_an_team:
                 name = input("Please enter you team name: ").lower()
-                if self.create_new_team(name):
+                if name in self.menu_team:
                     print(F"{name} is already in the Team list. The {name} will be added as {name}{n}")
                     name = name + F"{n}"
                     n += 1
@@ -139,8 +139,8 @@ class User_Interface:
                 team_info = input("Please enter the team name for the update: ").lower()
                 if team_info in self.menu_team:
                     city = input("Please Enter the new city of the team or leave it blank: ").lower()
-                    fee = input("Please enter the fee status or leave it blank: ").lower()
-                    number = input("Please enter the size of the team or leave it blank: ").lower()
+                    fee = input("Please enter the fee status(True/False) or leave it blank: ")
+                    number = input("Please enter the size of the team or leave it blank: ")
                     self.update_an_team(team_info,city,fee,number)
                     print(F"{team_info} has been sucessfully updated")
                 else:
